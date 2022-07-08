@@ -6,6 +6,7 @@ export default function useFriendStatus(friendId) {
     useEffect(() => {
         async function fetchStatus() {
             const statusResponse = await axios.get(`http://localhost:3001/status/${friendId}`);
+            // console.log("inside hook",statusResponse);
             setStatus(statusResponse.data.status);    
         }
         fetchStatus();
